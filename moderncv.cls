@@ -176,7 +176,7 @@
 \RequirePackage{microtype}
 
 % compatibility package with older versions of moderncv
-\RequirePackageWithOptions{moderncvcompatibility}
+%\RequirePackageWithOptions{moderncvcompatibility}
 
 
 %-------------------------------------------------------------------------------
@@ -258,7 +258,7 @@
 % loads a style scheme
 \newcommand*{\moderncvstyle}[1]{
   \RequirePackage{moderncvstyle#1}}
-  
+
 % loads a color scheme
 \newcommand*{\moderncvcolor}[1]{
   \RequirePackage{moderncvcolor#1}}
