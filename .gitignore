@@ -1,6 +1,4 @@
-cv_7.aux
-cv_7.log
-cv_7.out
-cv_7.pdf
+auxiliary_output/
+output/
 .idea/
 venv/

@@ -2,7 +2,11 @@ import subprocess
 
 
 def main():
-    subprocess.call(['pdflatex', 'cv/cv_7.tex'])
+    for document in ['cv', 'cover_letter']:
+        subprocess.call(['pdflatex',
+                         '-output-directory', 'output',
+                         '-aux-directory', 'auxiliary_output',
+                         f'{document}.tex'])
 
 
 if __name__ == '__main__':
