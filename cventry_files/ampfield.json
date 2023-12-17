@@ -1,0 +1,11 @@
+{
+  "name": "Ampfield Aktiebolag",
+  "start": 2015,
+  "end": 2018,
+  "title": "Trading Supervisor and Programmer",
+  "optional_1": null,
+  "optional_2": null,
+  "description": {
+    "short": "Supervised Ampfield's automated trading robots looking for irregular behaviour. I also programmed at Ampfield Aktiebolag. My code was to be used in the automated trading robots. Because of this, there were extremely high requirements on the robustness and effectiveness of the code."
+  }
+}

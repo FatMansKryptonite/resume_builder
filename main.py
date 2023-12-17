@@ -1,20 +1,31 @@
 import subprocess
-import re
 import json
 import os
+import utils
+
+
+def make_info_dict(name: str, match: list) -> dict:
+    with open(f'cventry_files/{name}.json') as file:
+        info_dict = json.load(file)
+
+    keyword_dict = utils.get_tiered_matches(info_dict.keys(), match)
+    for key, keywords in keyword_dict.items():
+        info_dict[key] = utils.get_nested_item(info_dict, keywords)
+        info_dict[key] = '' if info_dict[key] is None else str(info_dict[key])  # Parse None values
+
+    return info_dict
 
 
 def parse_cventry(match: list) -> str:
-    with open(f'input_files/{match[0]}.json') as file:
-        info_dict = json.load(file)
+    info_dict = make_info_dict(match[0], match[1:])
 
     info_list = [
         f"{info_dict['start']}--{info_dict['end']}",
         info_dict['name'],
         info_dict['title'],
-        '',
-        '',
-        rf"\input{{../input_files/{info_dict['text'][match[1]]}}}"
+        info_dict['optional_1'],
+        info_dict['optional_2'],
+        info_dict['description']
     ]
 
     # TODO Clean up
@@ -25,9 +36,7 @@ def parse_cventry(match: list) -> str:
 
 
 def parse_tex_template(file_str: str) -> str:
-
-    pattern = r'(€(\w+):(\w+)(?:\[(\w+)\])*€)'
-    matches = re.findall(pattern, file_str)
+    matches = utils.get_keywords(file_str)
 
     for match in matches:
         if match[1] == 'cventry':

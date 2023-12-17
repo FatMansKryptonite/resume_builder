@@ -1,0 +1,20 @@
+{
+  "name": "<name of employer institution>",
+  "start": {
+    "dawn_of_time": 0
+  },
+  "end": 2038,
+  "title": "<title or role name>",
+  "optional_1": null,
+  "optional_2": null,
+  "description": {
+    "long": "SOOOOOOOOOO long",
+    "short": {
+      "shorter": {
+        "shortest": "s",
+        "second_shortest": "so",
+        "third_shortest": "so short"
+      }
+    }
+  }
+}

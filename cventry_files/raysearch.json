@@ -1,0 +1,11 @@
+{
+  "name": "RaySearch Laboratories",
+  "start": 2019,
+  "end": 2021,
+  "title": "Data Science Researcher",
+  "optional_1": null,
+  "optional_2": null,
+  "description": {
+    "long": "Developed deep learning algorithms for biomedical applications, specifically for feature extraction from CT images used by oncologists for cancer treatment planning. Features were later used for automatic treatment planning of cancer patients. The methods used in the project include, but are not limited to, Deep and Convolutional Neural Networks, Autoencoders, Optimisation, and Massively Scalable and Sparse Gaussian Processes. Additionally, developed the lexicographic treatment planning algorithms in RaySearch products. This involved completely redesigning the algorithms and optimisation problems to better suit the task. Here, close collaboration with medical professionals was of utmost importance to ensure the clinical relevance of the project."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "<name of employer institution>",
+  "start": 1970,
+  "end": 2038,
+  "title": "<title or role name>",
+  "optional_1": "",
+  "optional_2": "",
+  "description": "<entry description>"
+}
