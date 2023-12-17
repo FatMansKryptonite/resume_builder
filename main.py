@@ -4,8 +4,8 @@ import os
 import utils
 
 
-def make_info_dict(type: str, name: str, match: list) -> dict:
-    with open(f'{type}_files/{name}.json') as file:
+def make_info_dict(tag_type: str, name: str, match: list) -> dict:
+    with open(f'{tag_type}_files/{name}.json') as file:
         info_dict = json.load(file)
 
     keyword_dict = utils.get_tiered_matches(info_dict.keys(), match)
@@ -16,9 +16,7 @@ def make_info_dict(type: str, name: str, match: list) -> dict:
     return info_dict
 
 
-def parse_cventry(match: list) -> str:
-    info_dict = make_info_dict('cventry', match[0], match[1:])
-
+def cventry_info_list(info_dict: dict) -> list:
     info_list = [
         f"{info_dict['start']}--{info_dict['end']}",
         info_dict['name'],
@@ -27,37 +25,38 @@ def parse_cventry(match: list) -> str:
         info_dict['optional_2'],
         info_dict['description']
     ]
-
-    # TODO Clean up
-    # Makes a LaTeX compatible string...
-    input_str = r'\cventry' + ''.join([f'{{{info}}}' for info in info_list])
-
-    return input_str
+    return info_list
 
 
-def parse_cvitem(match: list) -> str:
-    info_dict = make_info_dict('cvitem', match[0], match[1:])
-
+def cvitem_info_list(info_dict: dict) -> list:
     info_list = [
         info_dict['name'],
         info_dict['description']
     ]
+    return info_list
+
+
+def parse_tag(tag_type: str, match: list) -> str:
+    info_dict = make_info_dict(tag_type, match[0], match[1:])
+
+    info_list = []
+    if tag_type == 'cvitem':
+        info_list = cvitem_info_list(info_dict)
+    elif tag_type == 'cventry':
+        info_list = cventry_info_list(info_dict)
 
     # TODO Clean up
     # Makes a LaTeX compatible string...
-    input_str = r'\cvitem' + ''.join([f'{{{info}}}' for info in info_list])
+    input_str = rf'\{tag_type}' + ''.join(['{' + info + '}' for info in info_list])
 
     return input_str
+
 
 def parse_tex_template(file_str: str) -> str:
     matches = utils.get_keywords(file_str)
 
     for match in matches:
-        if match[1] == 'cventry':
-            input_str = parse_cventry(match[2:])
-        elif match[1] == 'cvitem':
-            input_str = parse_cvitem(match[2:])
-
+        input_str = parse_tag(match[1], match[2:])
         file_str = file_str.replace(match[0], input_str)
 
     return file_str
