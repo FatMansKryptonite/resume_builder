@@ -5,7 +5,7 @@ import utils
 
 
 def make_info_dict(tag_type: str, name: str, match: list) -> dict:
-    with open(f'{tag_type}_files/{name}.json') as file:
+    with open(f'content_files/{tag_type}_files/{name}.json') as file:
         info_dict = json.load(file)
 
     keyword_dict = utils.get_tiered_matches(info_dict.keys(), match)
@@ -36,6 +36,13 @@ def cvitem_info_list(info_dict: dict) -> list:
     return info_list
 
 
+def cvlistitem_info_list(info_dict: dict) -> list:
+    info_list = [
+        info_dict['description']
+    ]
+    return info_list
+
+
 def parse_tag(tag_type: str, match: list) -> str:
     info_dict = make_info_dict(tag_type, match[0], match[1:])
 
@@ -44,6 +51,8 @@ def parse_tag(tag_type: str, match: list) -> str:
         info_list = cvitem_info_list(info_dict)
     elif tag_type == 'cventry':
         info_list = cventry_info_list(info_dict)
+    elif tag_type == 'cvlistitem':
+        info_list = cvlistitem_info_list(info_dict)
 
     # TODO Clean up
     # Makes a LaTeX compatible string...
