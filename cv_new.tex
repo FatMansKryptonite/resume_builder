@@ -1,4 +1,3 @@
-
 \documentclass[10pt,a4paper,sans]{moderncv}
 \moderncvstyle{classic}
 \moderncvcolor{default}
@@ -9,9 +8,10 @@
   left=25 mm,
   right=25 mm,
   top=25 mm,
-  bottom=0 mm,
+  bottom=25 mm,
 }
 
+\input{../content_files/input_files/variables}
 \input{../content_files/input_files/contact_details}
 
 %----------------------------------------------------------------------------------------
@@ -19,13 +19,7 @@
 \begin{document}
 \makecvtitle
 
-%----------------------------------------------------------------------------------------
-%	MOTIVATION SECTION
-%----------------------------------------------------------------------------------------
-
-% \section{Motivation for Applying}
-% Hello, I wish to send an unsolicited application for work as a Senior Data Scientist. I am motivated to transition from my current role as Senior Data Science Consultant at Valcon back into a more research-intensive environment, and I believe Minerva Imaging could be the perfect fit. I have previously worked in the medical industry as a Data Science Researcher at RaySearch Laboratories. In this role, I attained an in-depth grasp of radiotherapy for cancer treatment and innovatively applied machine learning to the domain. The meaningful impact on patient well-being this role provided, and the attention to detail it required deeply motivated me. This is why I choose to apply. I hope to hear back from you soon.
-
+\input{../content_files/input_files/motivation_for_applying}
 
 \section{Work Experience}
 €cventry:valcon[description:long]€
@@ -46,29 +40,11 @@
 €cvlistitem:hobbies€
 €cvlistitem:mensa€
 
-
-%----------------------------------------------------------------------------------------
-\newpage
-
-%----------------------------------------------------------------------------------------
-%	OPEN APPLICATION SECTION
 %----------------------------------------------------------------------------------------
 
-% \section{Motivation for Applying}
+%\input{../content_files/input_files/motivation_for_applying}
 
-% Hello, I wish to send an open application for work as an \textit{Experienced Data Scientist}. I am motivated to transition from my current role as Senior Data Science Consultant at Valcon back into a more research-intensive environment, and I believe \[COMPANY\] could be a great fit. 
-
-% \hspace{8 mm}I have previously worked in the medical industry as a Data Science Researcher at RaySearch Laboratories. In this role, I attained an in-depth grasp of radiotherapy for cancer treatment and innovatively applied machine learning to the domain. The meaningful impact on patient well-being this role provided, and the attention to detail it required deeply motivated me. Lately, I have worked as a Senior Data Scientist in a consultancy role where I have applied my skills to a variety of problem domains. I have also spent a lot of time mentoring my junior colleagues and ensured the team has been developing in the right direction.
-
-
-% \vspace{10 mm}
-% I hope to hear back from you soon. Regards, 
-
-% \vspace{3 mm} 
-% Ivar Cashin Eriksson 
-
-% \vspace{-14mm}
-% \hfill \includegraphics[height=2.5cm]{assets/Signature_Vectorised.pdf}
-% \end{document}
+\vspace{10 mm}
+\input{../content_files/input_files/greeting_and_signature}
 
 \end{document}
