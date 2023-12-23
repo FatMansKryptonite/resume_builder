@@ -1,5 +1,4 @@
 auxiliary_output/
-output/
 .idea/
 venv/
 applications/**/*.pdf
