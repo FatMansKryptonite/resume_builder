@@ -72,19 +72,19 @@ def parse_tex_template(file_str: str) -> str:
 
 
 def main():
-    documents = ['cv_new.tex']
-    for document in documents:
-        with open(document, encoding='utf-8') as file:
+    document_templates = ['cv.tex', 'cover_letter.tex']
+    for template in document_templates:
+        with open(os.path.join('document_templates', template), encoding='utf-8') as file:
             parsed_file_str = parse_tex_template(file.read())
 
-        with open(os.path.join('tex_files', document), 'w') as file:
+        with open(os.path.join('tex_files', template), 'w') as file:
             file.write(parsed_file_str)
 
         subprocess.call(
             ['pdflatex',
                 '-output-directory', '../output',
                 '-aux-directory', '../auxiliary_output',
-                f'{document}'],
+                f'{template}'],
             cwd='tex_files'
         )
 

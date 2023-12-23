@@ -1,20 +1,63 @@
-\input{../content_files/input_files/settings}
-\title{Cover Letter}
-\input{../content_files/input_files/variables}
-\input{../content_files/input_files/contact_details}
-\photo[80pt][0.7pt]{../assets/portrait.jpg}
 
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[10pt,a4paper,sans]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{default}
+
+\usepackage{geometry}
+
+
+\geometry{
+  left=25 mm,
+  right=25 mm,
+  top=25 mm,
+  bottom=0 mm,
+}
+%----------------------------------------------------------------------------------------
+%	KEYWORDS
+%----------------------------------------------------------------------------------------
+\newcommand{\company}{Minerva Imaging}
+\newcommand{\position}{Data Scientist position}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\title{Cover Letter}
+\firstname{\Huge Ivar Cashin}
+\familyname{\Huge Eriksson}
+
+% All information in this block is optional, comment out any lines you don't need
+%\address{Tullgarnsv\"agen 2, 125 71 \"Alvsj\"o}{}{Stockholm, Sweden}{}  % Swedish Address
+\address{Baldersgade 41, 4., 2200 K{\o}benhavn N}{}{Copenhagen, Denmark}{}  % Danish Address
+\mobile{+45 44 12 18 06}
+\email{ivar.cashin.eriksson@gmail.com}
+\extrainfo{
+    \href{https://www.linkedin.com/in/ivarcashineriksson/}{\includegraphics[height=\fontcharht\font`\B]{../assets/linkedin_logo.png} LinkedIn},
+    \href{https://github.com/FatMansKryptonite}{\includegraphics[height=\fontcharht\font`\B]{../assets/github_logo.png} GitHub}
+}
+%\quote{General Application.}
 %----------------------------------------------------------------------------------------
 
 \begin{document}
 \makecvtitle
+\pagestyle{empty}
 
-
+%----------------------------------------------------------------------------------------
+%	COVER LETTER
+%----------------------------------------------------------------------------------------
+% \vspace{0 mm}
 \section{Introduction}
+
 To whom it may concern, I wish to send an unsolicited application for work as a Senior Data Scientist. I am motivated to transition from my current role as Senior Data Science Consultant at Valcon back into a more research-intensive environment, and I believe \company{} could be the perfect fit. I have previously worked in the medical industry as a Data Science Researcher at RaySearch Laboratories. In this role, I attained an in-depth grasp of radiotherapy for cancer treatment and innovatively applied machine learning to the domain. The meaningful impact on patient well-being this role provided, and the attention to detail it required deeply motivated me. This is why I choose to apply.
 
-
+%----------------------------------------------------------------------------------------
+%   JOB SPECIFIC PART
+%----------------------------------------------------------------------------------------
 \hspace{7 mm} I would be a good fit for \company{} as I have experience with machine learning, various programming languages, physics, statistics, and other engineering disciplines. This includes autoencoders for feature extraction from CT scans, Python (TensorFlow, pandas, SciPy, etc.), C\#, R, radiotherapy, massively scalable Gaussian processes, deep neural networks, optimisation, hidden Markov models, various financial instruments and more.
+%----------------------------------------------------------------------------------------
 
 \section{Work Experience}
 I am currently working at Valcon as a Senior Data Scientist Consultant. My daily work involves a wide variety of data science tasks and finding insights in any sort of data from any sector. Examples of previous work include clustering of IoT and churn analysis. Being a consultant means that the projects always have a business angle and that being able to present the results in an understandable manner is as important as the results themselves.
@@ -35,11 +78,22 @@ I am currently working at Valtech as a Data Scientist Consultant. My daily work 
 
 % \hspace{7 mm} At Ampfield I learned to properly debug my code and to identify possibly problematic situations. As Ampfield utilises advanced mathematics to predict the market, the code I wrote was centered around accuracy and efficiency. Developing this kind of back end code was a great experience and made me further develop my analytical problem solving skills learned at university.
 
+%----------------------------------------------------------------------------------------
+%   JOB SPECIFIC PART
+%----------------------------------------------------------------------------------------
 \hspace{7 mm} My previous experience within data science, machine learning, mathematics, and business oriented decision making means that I would quickly become a productive member of the team at \company{}. My data science, and economics background would also help me to faster get a good grasp of \company{}'s products.
+%----------------------------------------------------------------------------------------
 
 \section{Personal}
 In my free time, I enjoy time spent on various projects to increase my skill set. These involve everything from coding and 3D printing to woodworking and climbing.
 
-\input{../content_files/input_files/greeting_and_signature}
 
+\vspace{3 mm}
+I hope to hear back from you soon. Regards,
+
+\vspace{3 mm}
+Ivar Cashin Eriksson.
+
+\vspace{-14mm}
+\hfill \includegraphics[height=2.5cm]{../assets/Signature_Vectorised.pdf}
 \end{document}
