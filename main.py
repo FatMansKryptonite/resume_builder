@@ -2,6 +2,7 @@ import subprocess
 import json
 import os
 import utils
+from datetime import date
 
 
 def make_info_dict(tag_type: str, name: str, match: list) -> dict:
@@ -72,21 +73,34 @@ def parse_tex_template(file_str: str) -> str:
 
 
 def main():
-    document_templates = ['cv.tex', 'cover_letter.tex']
-    for template in document_templates:
-        with open(os.path.join('document_templates', template), encoding='utf-8') as file:
-            parsed_file_str = parse_tex_template(file.read())
+    applications = ['novo_ds_with_people_interest', 'template']
+    for application in applications:
+        applicaiton_dir = os.path.join('applications', application)
+        for filepath_str in os.listdir(applicaiton_dir):
 
-        with open(os.path.join('tex_files', template), 'w') as file:
-            file.write(parsed_file_str)
+            # Only treat .tex documents
+            if not filepath_str.endswith('.tex'):
+                continue
 
-        subprocess.call(
-            ['pdflatex',
-                '-output-directory', '../output',
-                '-aux-directory', '../auxiliary_output',
-                f'{template}'],
-            cwd='tex_files'
-        )
+            # Read and parse template
+            with open(os.path.join(applicaiton_dir, filepath_str), encoding='utf-8') as file:
+                parsed_file_str = parse_tex_template(file.read())
+
+            # Save parsed .tex document
+            with open(os.path.join('tex_files', 'main.tex'), 'w') as file:
+                file.write(parsed_file_str)
+
+            # Render file
+            file_name = filepath_str.split('.')[0]
+            todays_date = date.today().strftime("%Y-%m-%d")
+            subprocess.call(
+                ['pdflatex',
+                    '-output-directory', f'../{applicaiton_dir}',
+                    '-aux-directory', '../auxiliary_output',
+                    '-jobname', f'Eriksson, Ivar - {file_name} ({todays_date})',
+                    'main.tex'],
+                cwd='tex_files'
+            )
 
 
 if __name__ == '__main__':

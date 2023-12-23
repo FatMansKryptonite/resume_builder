@@ -2,6 +2,6 @@ auxiliary_output/
 output/
 .idea/
 venv/
+applications/**/*.pdf
 
-tex_files/cv_new.tex
-tex_files/cover_letter.tex
+tex_files/main.tex
