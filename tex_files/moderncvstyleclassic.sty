@@ -58,13 +58,13 @@
 \renewcommand*{\hintfont}{}
 
 % styles
-\renewcommand*{\namestyle}[1]{{\namefont\textcolor{color0}{#1}}}
-\renewcommand*{\titlestyle}[1]{{\titlefont\textcolor{color2}{#1}}}
-\renewcommand*{\addressstyle}[1]{{\addressfont\textcolor{color1}{#1}}}
-\renewcommand*{\quotestyle}[1]{{\quotefont\textcolor{color1}{#1}}}
-\renewcommand*{\sectionstyle}[1]{{\sectionfont\textcolor{color1}{#1}}}
-\renewcommand*{\subsectionstyle}[1]{{\subsectionfont\textcolor{color1}{#1}}}
-\renewcommand*{\hintstyle}[1]{{\hintfont\textcolor{color0}{#1}}}
+\renewcommand*{\namestyle}[1]{{\namefont\textcolor{text_color}{#1}}}
+\renewcommand*{\titlestyle}[1]{{\titlefont\textcolor{contact_details_color}{#1}}}
+\renewcommand*{\addressstyle}[1]{{\addressfont\textcolor{theme_color}{#1}}}
+\renewcommand*{\quotestyle}[1]{{\quotefont\textcolor{theme_color}{#1}}}
+\renewcommand*{\sectionstyle}[1]{{\sectionfont\textcolor{theme_color}{#1}}}
+\renewcommand*{\subsectionstyle}[1]{{\subsectionfont\textcolor{theme_color}{#1}}}
+\renewcommand*{\hintstyle}[1]{{\hintfont\textcolor{text_color}{#1}}}
 
 % lengths
 \newlength{\quotewidth}
@@ -106,7 +106,7 @@
   % optional detailed information box
   \newbox{\makecvtitledetailsbox}%
   \savebox{\makecvtitledetailsbox}{%
-    \addressfont\color{color2}%
+    \addressfont\color{contact_details_color}%
     \begin{tabular}[b]{@{}r@{}}%
       \ifthenelse{\isundefined{\@addressstreet}}{}{\makenewline\addresssymbol\@addressstreet%
         \ifthenelse{\equal{\@addresscity}{}}{}{\makenewline\@addresscity}}% if \addresstreet is defined, \addresscity will always be defined but could be empty
@@ -128,7 +128,7 @@
     {}%
     {%
       \hspace*{\separatorcolumnwidth}%
-      \color{color1}%
+      \color{theme_color}%
       \setlength{\fboxrule}{\@photoframewidth}%
       \ifdim\@photoframewidth=0pt%
         \setlength{\fboxsep}{0pt}\fi%
@@ -162,7 +162,7 @@
   \par\addvspace{2.5ex}%
   \phantomsection{}% reset the anchor for hyperrefs
   \addcontentsline{toc}{section}{#1}%
-  \parbox[t]{\hintscolumnwidth}{\strut\raggedleft\raisebox{\baseletterheight}{\color{color1}\rule{\hintscolumnwidth}{0.95ex}}}%
+  \parbox[t]{\hintscolumnwidth}{\strut\raggedleft\raisebox{\baseletterheight}{\color{theme_color}\rule{\hintscolumnwidth}{0.95ex}}}%
   \hspace{\separatorcolumnwidth}%
   \parbox[t]{\maincolumnwidth}{\strut\sectionstyle{#1}}%
   \par\nobreak\addvspace{1ex}\@afterheading}% to avoid a pagebreak after the heading
@@ -262,7 +262,7 @@
   \hfill%
   \begin{minipage}{.5\textwidth}%
     \raggedleft%
-    \addressfont\textcolor{color2}{%
+    \addressfont\textcolor{contact_details_color}{%
       {\bfseries\upshape\@firstname~\@familyname}\@firstdetailselementfalse%
       \ifthenelse{\isundefined{\@addressstreet}}{}{\makenewline\addresssymbol\@addressstreet%
         \ifthenelse{\equal{\@addresscity}{}}{}{\makenewline\@addresscity}}%
@@ -300,7 +300,7 @@
   \ifthenelse{\isundefined{\@enclosure}}{}{%
     \\%
     \vfill%
-    {\color{color2}\itshape\enclname: \@enclosure}}}
+    {\color{contact_details_color}\itshape\enclname: \@enclosure}}}
 
 
 \endinput

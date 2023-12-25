@@ -138,7 +138,11 @@
     pdfauthor     = {\@firstname{}~\@familyname{}},
     pdftitle      = {\@firstname{}~\@familyname{} -- \@title{}},
     pdfsubject    = {Resum\'{e} of \@firstname{}~\@familyname{}},
-    pdfkeywords   = {\@firstname{}~\@familyname{}, curriculum vit\ae{}, resum\'{e}}}}
+    pdfkeywords   = {\@firstname{}~\@familyname{}, curriculum vit\ae{}, resum\'{e}},
+    colorlinks=true,
+    urlcolor=link_color          % color of external links
+  }
+}
 
 % graphics
 \RequirePackage{graphicx}
@@ -158,9 +162,9 @@
       \@ifundefined{r@lastpage}{}{%
         \ifthenelse{\pageref{lastpage}>1}{%
           \newlength{\pagenumberwidth}%
-          \settowidth{\pagenumberwidth}{\color{color2}\addressfont\itshape\strut\thepage/\pageref{lastpage}}%
+          \settowidth{\pagenumberwidth}{\color{contact_details_color}\addressfont\itshape\strut\thepage/\pageref{lastpage}}%
           \fancypagestyle{plain}{%
-            \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\addressfont\itshape\strut\thepage/\pageref{lastpage}}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
+            \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{contact_details_color}\addressfont\itshape\strut\thepage/\pageref{lastpage}}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
           \pagestyle{plain}}{}}%
       \AtEndDocument{\label{lastpage}}\else\fi}}
 \pagestyle{plain}
@@ -218,17 +222,11 @@
 \newcommand*{\email}[1]{\def\@email{#1}}
 \newcommand*{\homepage}[2]{\def\@homepage{#1}\def\@homepagetitle{#2}}
 
-% colors
-\definecolor{color0}{rgb}{0,0,0}% main default color, normally left to black
-\definecolor{color1}{rgb}{0,0,0}% primary theme color
-\definecolor{color2}{rgb}{0,0,0}% secondary theme color
-\definecolor{color3}{rgb}{0,0,0}% tertiary theme color
-
 % symbols
 %   itemize labels (the struts were added to correct inter-item spacing (works for single line items, until a solution is found for multi-line ones...)
-\newcommand*{\labelitemi}{\strut\textcolor{color1}{\marvosymbol{123}}}% equivalent to \Neutral from marvosym package; alternative: \fontencoding{U}\fontfamily{ding}\selectfont\tiny\symbol{'102}
-\newcommand*{\labelitemii}{\strut\textcolor{color1}{\large\bfseries-}}
-\newcommand*{\labelitemiii}{\strut\textcolor{color1}{\rmfamily\textperiodcentered}}% alternative: \textasteriskcentered; the \rmfamily is required to force Latin Modern fonts when using sans serif, as OMS/lmss/m/n is not defined and gets substituted by OMS/cmsy/m/n
+\newcommand*{\labelitemi}{\strut\textcolor{theme_color}{\marvosymbol{123}}}% equivalent to \Neutral from marvosym package; alternative: \fontencoding{U}\fontfamily{ding}\selectfont\tiny\symbol{'102}
+\newcommand*{\labelitemii}{\strut\textcolor{theme_color}{\large\bfseries-}}
+\newcommand*{\labelitemiii}{\strut\textcolor{theme_color}{\rmfamily\textperiodcentered}}% alternative: \textasteriskcentered; the \rmfamily is required to force Latin Modern fonts when using sans serif, as OMS/lmss/m/n is not defined and gets substituted by OMS/cmsy/m/n
 \newcommand*{\labelitemiv}{\labelitemiii}
 %   enumerate labels
 \renewcommand{\theenumi}{\@arabic\c@enumi}
@@ -245,7 +243,7 @@
 \newcommand*{\homepagesymbol}{}
 
 % fonts
-\AtBeginDocument{\normalfont\color{color0}}
+\AtBeginDocument{\normalfont\color{text_color}}
 
 % strings for internationalisation
 \newcommand*{\refname}{Publications}
@@ -373,8 +371,8 @@
 % usage: \emaillink[optional text]{link}
 \newcommand*{\emaillink}[2][]{%
   \ifthenelse{\equal{#1}{}}%
-    {\href{mailto:#2}{#2}}%
-    {\href{mailto:#2}{#1}}}
+    {\href{mailto:#2}{\color{contact_details_color}#2}}%
+    {\href{mailto:#2}{\color{contact_details_color}#1}}}
 
 % thebibliography environment, for use with BibTeX and possibly multibib
 \newlength{\bibindent}
