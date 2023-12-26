@@ -1,5 +1,6 @@
 import re
 
+
 def get_nested_item(nested_dict: dict, keywords: list) -> object:
     current_level = nested_dict
     for keyword in keywords:
@@ -11,16 +12,21 @@ def get_nested_item(nested_dict: dict, keywords: list) -> object:
 
 
 def get_tiered_matches(keys: list, match: list) -> dict:
-    keyword_dict = {key: [key] for key in keys}
+    keyword_dict = {key: [] for key in keys}
 
-    current_key = None
-    for elem in match:
-        if elem in keys:
-            # If the element is a key, switch the current key
-            current_key = elem
-        elif current_key:
-            # If there is a current key, append the element to its list
-            keyword_dict[current_key].append(elem)
+    key_mask = [elem in keys for elem in match]
+    keyword_tree = None
+    for i in range(len(match)):
+        is_key = key_mask[i]
+        elem = match[i]
+
+        if is_key:
+            keyword_tree = [elem]
+        else:
+            keyword_tree.append(elem)
+
+        if i+1 == len(match) or key_mask[i+1]:
+            keyword_dict[keyword_tree[0]].append(keyword_tree)
 
     return keyword_dict
 
@@ -39,6 +45,3 @@ def get_keywords(file_str: str) -> list:
         all_keywords += [keywords]
 
     return all_keywords
-
-
-

@@ -1,6 +1,6 @@
 {
   "name": "Technology",
-  "description": "Python (NumPy, SHAP, pandas, TensorFlow, scikit-learn, etc.), R, SQL, C++, C\\#, MATLAB, Java, \\LaTeX, HTML, CSS, MS Azure (Data Science Associate Certified), AML, Fabric, Databricks, Docker, Git, 3D Printing, Fusion 360, Blender."
+  "description": "Python (TensorFlow, NumPy, SHAP, pandas, scikit-learn, etc.), R, SQL, C++, C\\#, MATLAB, Java, \\LaTeX, HTML, CSS, MS Azure (Data Science Associate Certified), AML, Fabric, Databricks, Docker, Git, 3D Printing, Fusion 360, Blender."
 }
 
 

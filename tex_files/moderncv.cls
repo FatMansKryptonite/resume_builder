@@ -140,7 +140,8 @@
     pdfsubject    = {Resum\'{e} of \@firstname{}~\@familyname{}},
     pdfkeywords   = {\@firstname{}~\@familyname{}, curriculum vit\ae{}, resum\'{e}},
     colorlinks=true,
-    urlcolor=link_color          % color of external links
+    urlcolor=link_color,              % color of external links
+    linkcolor=contact_details_color   % color of internal links
   }
 }
 

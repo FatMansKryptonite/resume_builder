@@ -10,9 +10,17 @@ def make_info_dict(tag_type: str, name: str, match: list) -> dict:
         info_dict = json.load(file)
 
     keyword_dict = utils.get_tiered_matches(info_dict.keys(), match)
-    for key, keywords in keyword_dict.items():
-        info_dict[key] = utils.get_nested_item(info_dict, keywords)
-        info_dict[key] = '' if info_dict[key] is None else str(info_dict[key])  # Parse None values
+    for key, keyword_trees in keyword_dict.items():
+        if len(keyword_trees) == 0:
+            info_dict[key] = '' if info_dict[key] is None else str(info_dict[key])
+            continue
+
+        entries = []
+        for keyword_tree in keyword_trees:
+            entries.append(utils.get_nested_item(info_dict, keyword_tree))
+
+        entry = r' \newpar '.join(entries)
+        info_dict[key] = entry
 
     return info_dict
 
