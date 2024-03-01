@@ -1,5 +1,6 @@
-mlops
-llm
-fine tuning
-cost/performance optimization
-de
+- [x] mlops
+- [x] llm
+- [x] fine tuning
+- [ ] cost/performance optimization
+
+- [ ] add happy to travel to nordics
