@@ -1,0 +1,25 @@
+# Include
+- [x] Experience with machine learning, AI, Computervision, GenAI
+  - [ ] Add news art project 
+- [x] Experience with being responsible for ideation, development, operations and maintenance of machine learning
+- [x] Setting DS direction 
+- [x] Collaborate with business
+- [ ] Bridge technologies   
+- [x] Mentoring 
+- [x] Inspire the Digital department and the rest of NH 
+- [x] Uncover business needs with both employees, directors and C-level 
+- [x] A master’s in engineering, computer science or similar  
+- [x] Minimum of 5 years’ experience post degree  
+- [x] Experience with deployment and operations of ML-models 
+- [x] Experience with stakeholder management on all levels 
+- [x] Experience from private or financial organisations    
+- [x] Experience as a consultant and process optimisation is highly appreciated 
+- [x] Fluent in English, Danish is a plus 
+- [x] Visionary 
+- [x] Professional, quality-conscious, impact oriented  
+- [ ] Independent and able to make decisions and provide input on issues relating to administration, projects and communication 
+- [ ] Ambitious, proactive and with a structured approach to problem-solving  
+- [ ] Intellectual quickness, curiosity, discipline, resourcefulness and resilience 
+- [x] Strong interpersonal skills and ability to build good relationships  
+- [x] Ability to work as a team member 
+- [ ] Aligns to the Novo Holdings’ values 

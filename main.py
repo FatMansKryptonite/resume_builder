@@ -81,7 +81,7 @@ def parse_tex_template(file_str: str) -> str:
 
 
 def main():
-    applications = ['for_nigel_frank']
+    applications = ['novo_holdings_machine_learning_engineer']
     for application in applications:
         applicaiton_dir = os.path.join('applications', application)
         for filepath_str in os.listdir(applicaiton_dir):
